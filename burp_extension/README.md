@@ -22,13 +22,17 @@ $ java -jar jython_installer.jar -s -d /path/to/install/jython -t standard
 2. Install additional Python modules
 ```sh
 $ cd /path/to/install/jython
-$ ./bin/pip install PyYaml requests
+$ ./bin/pip install requests
+$ wget http://pyyaml.org/download/pyyaml/PyYAML-3.09.tar.gz
+$ tar zxf PyYAML-3.09.tar.gz
+$ cd PyYAML-3.09
+$ ../bin/jython setup.py --without-libyaml install
 ```
 3. Run your Burp Suite
 4. Open Jython file chooser dialog
 [Extender] - [Options] - [Python Environment] - [Location of the Jython standalone JAR file]
 5. Choose the file `/path/to/install/jython/jython.jar`
-6. Load `burp_extender.py` as Python type burp extension
+6. Load `burp_extension.py` as Python type burp extension
 
 ### Scanning
 
